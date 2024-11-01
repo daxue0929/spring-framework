@@ -126,7 +126,7 @@ public abstract class AbstractRefreshableApplicationContext extends AbstractAppl
 			DefaultListableBeanFactory beanFactory = createBeanFactory(); //创建工厂的时候会去判断有没有父工厂。
 			beanFactory.setSerializationId(getId());
 			customizeBeanFactory(beanFactory);
-			loadBeanDefinitions(beanFactory);
+			loadBeanDefinitions(beanFactory); // 加载bean的定义信息
 			this.beanFactory = beanFactory;
 		}
 		catch (IOException ex) {
@@ -220,10 +220,10 @@ public abstract class AbstractRefreshableApplicationContext extends AbstractAppl
 	}
 
 	/**
-	 * Load bean definitions into the given bean factory, typically through
-	 * delegating to one or more bean definition readers.
+	 * 将bean定义加载到给定的bean工厂中, 通常通过委托给一个或多个bean定义读取器。
 	 * @param beanFactory the bean factory to load bean definitions into
 	 * @throws BeansException if parsing of the bean definitions failed
+	 *
 	 * @throws IOException if loading of bean definition files failed
 	 * @see org.springframework.beans.factory.support.PropertiesBeanDefinitionReader
 	 * @see org.springframework.beans.factory.xml.XmlBeanDefinitionReader

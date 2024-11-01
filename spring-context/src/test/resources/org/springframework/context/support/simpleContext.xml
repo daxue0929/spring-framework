@@ -10,4 +10,10 @@
 		<constructor-arg value="someNonExistentFile.xml"/>
 	</bean>
 
+	<bean id="student" class="org.springframework.example.Student" />
+	<bean id="teacher" class="org.springframework.example.Teacher" />
+	<bean id="osInfo" class="org.springframework.example.OsInfo" />
+	<bean id="customBeanFactoryPostProcessor"
+			class="org.springframework.example.CustomBeanFactoryPostProcessor" />
+
 </beans>
